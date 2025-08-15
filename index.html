@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ورشة الفروان للكهرباء</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#ef9904;
+  --brand-dark:#093177;
+  --bg-light:#f9f9f9;
+  --card-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+body{ font-family:'Cairo',sans-serif; background:var(--bg-light); color:#333; line-height:1.7; overflow-x:hidden; scroll-behavior:smooth; }
+
+.container{ width:90%; max-width:1100px; margin:auto; }
+
+header{
+  position:sticky; top:0; z-index:100; 
+  -webkit-backdrop-filter:saturate(180%) blur(8px);
+  backdrop-filter:saturate(180%) blur(8px);
+  background:rgba(212,112,11,0.95);
+  color:#fff;
+  transition: all 0.3s ease;
+}
+header .bar{ display:flex; justify-content:space-between; align-items:center; padding:14px 0; flex-wrap:wrap; }
+nav ul{ display:flex; gap:18px; list-style:none; flex-wrap:wrap; }
+nav a{ color:#fff; text-decoration:none; font-weight:700; position:relative; transition: color 0.3s; }
+nav a::after{ content:""; position:absolute; inset-inline-start:0; bottom:-4px; height:2px; width:0; background:#fff; transition:width .3s; }
+nav a:hover::after{ width:100%; }
+nav a:hover{ color:#ffe083; }
+
+.hero{
+  position:relative; height:80vh; display:grid; place-items:center; text-align:center; color:#fff;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.7)),
+              url('IMG_9726.JPG') center/cover no-repeat;
+  background-attachment: scroll;
+}
+.hero h1{ font-size:3rem; margin-bottom:20px; letter-spacing:1px; transform:translateY(15px); opacity:0; animation:fadeUp .9s .15s forwards; }
+.hero p{ max-width:700px; font-size:1.2rem; margin:auto; transform:translateY(15px); opacity:0; animation:fadeUp .9s .35s forwards; }
+.btn{
+  display:inline-block; padding:16px 28px; background:var(--brand); color:#000; font-weight:800; border-radius:14px;
+  text-decoration:none; margin-top:25px; transform:scale(1); transition: all 0.3s ease;
+  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+  animation:pulse 1.8s infinite .6s;
+}
+.btn:hover{ transform:scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.3); }
+
+.section{ padding:80px 0; }
+.section.dark{ background:#fff3e0; }
+h2{ font-size:2.2rem; color:var(--brand-dark); margin-bottom:20px; text-align:center; position:relative; }
+h2::after{
+  content:""; display:block; width:60px; height:3px; background:var(--brand); margin:10px auto 0; border-radius:3px;
+}
+
+p{ font-size:1.1rem; text-align:center; margin-bottom:20px; }
+
+.grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;
+}
+
+.card{
+  background:#fff; padding:25px; border-radius:16px; box-shadow:var(--card-shadow);
+  border-inline-start:6px solid var(--brand); font-weight:700; font-size:1.05rem;
+  transform:translateY(30px); opacity:0; transition: all 0.6s ease;
+}
+.card.revealed{ transform:translateY(0); opacity:1; }
+
+.social-links{
+  display:flex; justify-content:center; gap:25px; margin-top:30px; flex-wrap:wrap;
+}
+.social-links a{
+  display:flex; align-items:center; justify-content:center; width:80px; height:80px;
+  border-radius:50%; background:#333; transition:all 0.3s; overflow:hidden;
+  position:relative;
+}
+.social-links a img{ width:40px; height:40px; transition: transform 0.3s; }
+.social-links a:hover img{ transform: scale(1.2) rotate(15deg); }
+.social-links .whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); }
+.social-links .facebook { background: linear-gradient(135deg, #1877F2, #0F5ACF); }
+.social-links .telegram { background: linear-gradient(135deg, #0088CC, #00BFFF); }
+
+footer{ background:#222; color:#aaa; text-align:center; padding:30px 0; font-size:.95rem; }
+
+@keyframes fadeUp{ from{ opacity:0; transform:translateY(20px) } to{ opacity:1; transform:translateY(0) } }
+@keyframes pulse{
+  0%,100%{ transform:scale(1) }
+  50%{ transform:scale(1.08) }
+}
+
+/* تحسينات للهواتف */
+@media screen and (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; padding: 0 10px; }
+  .btn { padding: 12px 20px; font-size: 0.9rem; }
+  nav ul { flex-direction: column; gap: 10px; align-items:center; }
+  .social-links a { width: 60px; height: 60px; }
+  .social-links a img { width: 30px; height: 30px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container bar">
+    <h3 style="margin:0">ورشة الفروان للكهرباء</h3>
+    <nav>
+      <ul>
+        <li><a href="#about">عن الورشة</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>كل ما تطمح به في عالم الكهرباء… نصنعه واقعًا!</h1>
+    <p>حلول كهربائية ذكية تجعل شقتك جاهزة من أول يوم، تنفيذ، صيانة، وطاقة شمسية بمعايير موثوقة.</p>
+    <a href="#contact" class="btn">اطلب استشارة مجانية</a>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <h2>عن ورشة الفروان</h2>
+    <p>الثقة الكهربائية في الخليج… خبرات ممتدة، تنفيذ احترافي، والتزام بالمواعيد.</p>
+  </div>
+</section>
+
+<section id="services" class="section dark">
+  <div class="container">
+    <h2>خدماتنا</h2>
+    <div class="grid">
+      <div class="card">تنفيذ أعمال الكهرباء</div>
+      <div class="card">تركيب الإنارة وديكورات الجبس بورد</div>
+      <div class="card">تركيب الطاقة الشمسية المنزلية والزراعية</div>
+      <div class="card">صيانة الأعطال الكهربائية</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <h2>تواصل معنا مباشرة</h2>
+    <p>اضغط على أيقونة وسيتم فتح التطبيق مباشرة للتواصل معنا</p>
+    <div class="social-links">
+      <a href="https://wa.me/+963954747863" target="_blank" class="whatsapp" aria-label="واتساب">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب">
+      </a>
+      <a href="https://www.facebook.com/share/15odsaky1G/?mibextid=wwXIfr" target="_blank" class="facebook" aria-label="فيسبوك">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="فيسبوك">
+      </a>
+      <a href="https://t.me/Farwan78" target="_blank" class="telegram" aria-label="تلغرام">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="تلغرام">
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2025 بإدارة محمد أبو قصي الفروان، جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+if(cards.length){
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('revealed'); } });
+  }, { threshold: 0.1 });
+  cards.forEach(el => observer.observe(el));
+}
+
+const header = document.querySelector('header');
+if(header){
+  window.addEventListener('scroll', () => {
+    header.style.boxShadow = window.scrollY > 10 ? '0 6px 25px rgba(0,0,0,0.3)' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
